@@ -1,0 +1,82 @@
+/* module all */
+
+
+@import "accessibility";
+
+
+
+/*---------------------------
+ * Wordpress loop style
+ * ------------------------- */
+//@import "hentry_base";
+@import "hentry_porto";
+//@import "hentry_left_icon";
+
+
+/* ---------------------------
+ * Special elements
+ * --------------------------*/
+
+/* Sekcja wyroznione[js] */
+@import "feturad_box";
+
+/* Sekcja podobne */
+@import "related";
+
+/* Sekcja zalaczniki w poscie */
+@import "attachment";
+
+/*Sekcja z wpisami - modul na portal */
+//@import "block_post";
+
+/*[js]Sekcja z tabela cen[js] */
+//@import "pricing-table";
+
+/*Sekcja portofilo - 6 przekreconych kwadratow ze zdjeciami */
+//@import "boxes_porto";
+
+/*[js]Sekcja portfolio - 7 kwadratow z animiacja - francuska */
+//@import "feturad_fr";
+
+/*[js]Sekcja i opiniami klientow - slajder(flexslider) */
+@import "client_reviews";
+
+
+
+/* -----------------------*
+ * Wordpress elements     *
+ * -----------------------*/
+/* Widget */
+@import "widgets";
+
+/* Comments */
+@import "coments";
+
+/* Post format style */
+@import "post-format";
+
+/* Shortcode [audio] */
+@import "shortcode";
+
+
+/* -----------------------*
+ * Jquery Pluginy         *
+ * -----------------------*/
+/* Slider - flexsider */
+@import "slider";
+
+/* Slider - Slick */
+//@import "slick";
+/* Lightbox - magnificPopup */
+@import "magnificPopup";
+
+/* Tabs */
+@import "ui-tabs";
+
+/* Gallery */
+//@import "justifiedGallery";
+
+/*
+ * Wordpress Plugin
+ */
+//@import "tribe_event";

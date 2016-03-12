@@ -1,0 +1,108 @@
+@mixin icon($name, $content, $size: 1.4, $tlo:'') {
+  .icon-#{$name}:before {
+    content: unquote("\"")+unquote(str-insert($content,"\\", 1))+unquote("\"");
+	font-size: (10*$size) + px;
+    font-size: $size+rem;
+
+    @if $tlo != '' {
+    	background: $tlo;
+    }
+    @content;
+  }
+
+}
+
+@mixin sample( $height: '', $bg:'') {
+
+    @if $height != '' {
+    	//min-height: 40px;
+    }
+    @if $bg != '' {
+    	//background: hsla(random(365), 90, 50, 1);
+    }
+
+}
+
+
+
+@mixin icon-ie7($name, $content, $size: 1.4) {
+
+	$var: "&#x";
+
+	.icon-#{$name} {
+  		*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '#{$var}#{$content}');
+    	@content;
+  	}
+	.icon-#{$name} > span {
+		font-size: (10*$size) + px;
+	}
+}
+
+
+
+
+
+@mixin font-size($size, $plus: 0, $line:'false') {
+	font-size: (10*$size) + px;
+    font-size: $size+rem;
+
+    @if $line != 'false' {
+        @if $plus > 0 {
+
+
+
+        line-height: ((10*($size+$plus))+5) + px;
+        line-height: (($size+$plus)+0.5)+rem;
+        }
+        @else {
+                  line-height: ((10*$size)+5) + px;
+                    line-height: ($size+0.5)+rem;
+        }
+
+
+}
+}
+
+
+
+@mixin font-size-procent($size) {
+    
+    font-size: (($size*100)/$size-base)#{'%'};
+
+}
+
+
+
+// Mixin Breakpoint
+@mixin point-min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+@mixin point-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+}
+
+
+
+
+
+
+
+
+
+

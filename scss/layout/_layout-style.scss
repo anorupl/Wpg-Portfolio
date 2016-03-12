@@ -1,0 +1,55 @@
+/*----------------------------------
+ *  float
+ * ---------------------------------*/
+.rtl {
+	float: right;
+}
+
+/*----------------------------------
+ *  Header
+ * ---------------------------------*/
+#site-header {
+	position: relative;
+    top:0;
+    left: 0;
+    z-index: 1000;
+	h1 {margin: 0; padding: 0;}
+}
+
+/*
+ *  W jednej lini logo i menu
+ */
+.title-area {
+	float:left;
+	padding: 25px gutter();
+	width: span(3.5);
+}
+
+/* Header nad slajderem - Dodac class="over-slider" do <body> */
+.over-slider {
+    position: relative;
+	#site-header{
+		position: absolute;
+	}
+}
+
+
+/* Header przypiety do gory - Dodac class="fixed-header" do <body> */
+.fixed-header {
+
+    //Margin top
+    $fix-margin-top: 105px;
+
+	margin-top: $fix-margin-top;
+
+	#site-header {
+		position: fixed;
+		background: $four-bw;
+		min-height: $fix-margin-top;
+	}
+	&.admin-bar {
+		#site-header {
+			top:32px;
+		}
+	}
+}

@@ -1,0 +1,400 @@
+/*----------------------------------
+ * Index -style
+ *  - Gird
+ *  - Header(fixed)
+ *  - Section (header)
+ *  - Single Hentry (feturad image)
+ *  - Feturad (feturad-box)
+ *  - Taxonomy loop (hentry - post_gallery)
+ *  - Slider
+ *  - Footer
+ *  - Section Offer
+
+ * ---------------------------------*/
+
+.attachment-image {
+    overflow: hidden;
+    padding: 2%;
+    background-color: $three-bw;
+
+    .attachment-info {
+        position:relative;
+        min-height: 27vh;
+        padding-left: gutter();
+        padding-right: gutter();
+        background: $four-bw;
+    }
+    .attachment-info::after {
+        content: '';
+        right: -19px;
+        border-width: 0px 0px 45px 20px;
+        border-color: transparent transparent transparent $four-bw;
+        position: absolute;
+        top: 0px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+}
+.attachment-file {
+    text-align: center;
+    border: 1px solid #D4D4D4;
+    padding: 2%;
+    background: $four-bw;
+
+    img {
+        max-height: 540px;
+        max-height: 70vh;
+        width: auto;
+    }
+}
+
+/*----------------------------------
+ *  Gird
+ * ---------------------------------*/
+.col-4-sp {
+    width: span(4);
+    padding: 0 2px;
+    margin-bottom: 2px;
+    float: left;
+
+}
+.both {
+    clear: both;
+}
+/*----------------------------------
+ *  Header
+ * ---------------------------------*/
+
+/* fixed */
+.fixed-header {
+    #site-header {
+    box-shadow: 0 0 15px #CCCCCC;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,.3);
+
+        &:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 1px;
+        background: $four-bw;
+        background: rgba(255,255,255,.6);
+        }
+    }
+}
+
+/*----------------------------------
+ *  Section - header
+ * ---------------------------------*/
+.header-center {
+    position: relative;
+    background-color: $four-bw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    h2 {
+        background: inherit;
+        display: inline-block;
+        padding: 20px 2%;
+        margin: 0 auto;
+        z-index: 100;
+        position: relative;
+    }
+    .header-span {
+        position: relative;
+        display: block;
+        background: inherit;
+    }
+    .border {
+        width: 80%;
+        position: absolute;
+        bottom: 50%;
+        left: 10%;
+        display: block;
+        height: 1px;
+        background-color:  scale-lightness($one-bw, 50%);
+        zoom: document;
+    }
+    p  {color: scale-lightness($one-bw, 50%);}
+
+}
+.singular {
+     .header-center {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+
+
+
+/*----------------------------------
+ *  Single - offer
+ *---------------------------------*/
+#gallery-offer {
+    width: 85%;
+    margin-top: 25px;
+    margin-left: 5%;
+    max-height: 60%;
+    border: 15px solid $four-bw;
+    background: $four-bw;
+}
+
+.see-gallery-button {
+    position: relative;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+}
+
+/*----------------------------------
+ *  Feturad - feturad-box
+ *---------------------------------*/
+.feturad-box {
+    .feturad-image img {
+        @include opacity(0.8);
+        @include single-transition(opacity, .2s);
+    }
+    .feturad-image a:hover img {
+        @include opacity(1);
+    }
+    .text-title-overlay {
+        @include transform( skewX(-25deg) );
+        p {
+          @include transform( translateY(-50%) skewX(25deg)  );
+        }
+    }
+    .text-overlay {
+        display:none;
+    }
+    .feturad-image:after,.feturad-image:before {
+        content: '';
+        display: block;
+        width: 5%;
+        height: 25%;
+        background: $four-bw;
+        position: absolute;
+        bottom: 6%;
+        @include transform( skewX(-25deg) );
+        z-index: 500;
+    }
+    .feturad-image:before {left: 10%; }
+    .feturad-image:after {right: 10%;}
+
+}
+
+/*----------------------------------
+ *  Slider
+ *---------------------------------*/
+#slider {
+    .slides > li:after{
+        content: '';
+        display: block;
+        width: 80%;
+        height: 50%;
+        position: absolute;
+        bottom: -15%;
+        right: -10%;
+        background: rgba(252, 16, 65, 0.8);
+        @include transform(skew(-41deg, -8deg));
+        z-index: 400;
+    }
+    .slides-continer {
+        position: absolute;
+        bottom: 0;
+        right: -5%;
+        padding: 2% 2% 3% 2%;
+        width: 70%;
+        z-index: 500;
+    }
+    .slides-btn {
+        margin-top: 5%;
+        a {margin:0 2%;}
+    }
+}
+
+/*----------------------------------
+ *  Footer
+ *---------------------------------*/
+
+.singular,
+.error404 {
+    .col-footer {
+       @extend .col-8;
+    }
+    .contact-item {
+        @extend .col-6
+    }
+}
+
+.singular.page-template-offer {
+    .col-footer {
+       @extend .col-5;
+     }
+    .contact-item {
+        @extend .clear-both
+    }
+}
+.blog,
+.archive,
+.search,
+.singular.attachment,
+.singular.single-format-gallery,
+.singular.single-format-image,
+.singular.page-template-show_featured,
+.singular.page-template-child_page_thumbnail {
+    .col-footer {
+       @extend .col-full-no;
+       padding: 0;
+    }
+    .contact-item {
+       @extend .col-4
+    }
+}
+
+
+
+
+
+/* Section - Google map */
+#section-directions-map {
+    position: relative;
+    margin-bottom: 10px;
+}
+#map-canvas {
+  height: 300px;
+}
+#panel {
+   position: absolute;
+   bottom: 20px;
+   width: 70%;
+   left: 15%;
+   z-index: 500;
+}
+#directions-panel .adp {
+   padding: 2%;
+   img.adp-marker {
+       max-width: none;
+    }
+}
+#drag {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+}
+
+
+/* Section - contact info */
+.section-contact {
+
+    .contact-info,
+    .contact-info > div,
+    .find-us-on {
+       padding-top: gutter();
+       padding-bottom: gutter();
+       overflow: hidden;
+    }
+    i {
+        font-size: 150%;
+        margin: 3px;
+        position: relative;
+        top: 4px;
+    }
+    .contact-info > div i {
+        min-width: 30px;
+        display: inline-block;
+        text-align: center;
+    }
+    .phone-contact {
+        background: $four-bw;
+        color: $two-color;
+        a {
+            color: $two-color;
+        }
+    }
+
+}
+
+.wide-content {
+   .entry-social {padding-top: 35px;}
+}
+
+
+/*----------------------------------
+ *  Breakpoint $tablet : max-width 768px;
+ * ---------------------------------*/
+@include breakpoint($tablet) {
+
+    /*----------------------------------
+     *  Tablet - Gird
+     *---------------------------------*/
+    .col-4-sp,
+    .col-footer,
+    .contact-item {
+        @include span(12 no-gutters); clear: both;
+    }
+
+    /*----------------------------------
+     *  Tablet - Slider
+     *---------------------------------*/
+    #slider {
+        .slides > li:after{
+            display: none;
+        }
+        .slides-continer {
+            bottom: 0;
+            right: 0;
+            padding: 2%;
+            width: 100%;
+            background: rgba(252, 16, 65, 0.8);
+       }
+       .slides-btn {
+             margin-top: 25px;
+       }
+    }
+
+    /*----------------------------------
+     *  Footer
+     *---------------------------------*/
+    #map-canvas {
+       height: 350px;
+       min-height: 95vh;
+    }
+    #panel {
+       width: 85%;
+       left: 7%;
+    }
+    #start {
+       width: 85%;
+       margin: 5px;
+    }
+    /*----------------------------------
+     *  Single - offer
+     *---------------------------------*/
+    #gallery-offer {
+        margin: 5px auto;
+        max-height: 100%;
+        border: 5px solid $four-bw;
+    }
+
+
+}
+
+/*----------------------------------
+ *  Breakpoint $tablet : max-width 1024px;
+ * ---------------------------------*/
+@include breakpoint($desktop ) {
+
+    /*----------------------------------
+     *  Desktop - Slider
+     *---------------------------------*/
+    #slider {
+        .slides > li:after{
+            height: 45%;
+       }
+    }
+}

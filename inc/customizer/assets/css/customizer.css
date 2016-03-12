@@ -1,0 +1,40 @@
+#customize-control-wpg_body_font,
+#customize-control-wpg_body_google_font,
+#customize-control-wpg_body_google_variants,
+#customize-control-wpg_heading_font,
+#customize-control-wpg_heading_google_font,
+#customize-control-wpg_heading_google_variants,
+#customize-control-google_subsets,
+
+#customize-control-wpg_featured_term,
+#customize-control-wpg_featured_term_title,
+#customize-control-wpg_featured_term_tax,
+#customize-control-wpg_featured_term_terms {
+    background: #fff;
+    padding: 5%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#customize-control-wpg_heading_font.customize-control {
+    margin-top: 20px;
+}
+#customize-control-google_subsets {
+    margin: 30px auto;
+}
+#customize-control-wpg_featured_term {
+    margin-bottom: 20px;
+}
+
+#customize-control-wpg_featured_term_terms .checkbox-list {
+    max-height: 255px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 80%;
+}
+#customize-control-wpg_featured_term_terms .checkbox-list ul {
+    display: none;
+}
+#customize-control-wpg_featured_term_terms .checkbox-list ul.show-list {
+    display: block;
+}

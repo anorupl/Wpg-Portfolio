@@ -1,0 +1,105 @@
+/* Linki
+   ========================================================================== */
+a {
+	text-decoration: none;
+	color: $two-color;
+	/* Remove the gray background color from active links in IE 10 */
+ 	background-color: transparent;
+
+	&:hover, &:active {color: $one-color; outline: 0;}
+
+	&:focus {}
+}
+
+/* Linki -> .button
+ * --------------------------------- */
+
+/* BYLA ZMIANA LACZNIKA BTN _ /- */
+
+
+.btn {
+	display:inline-block;
+	padding: 0 15px;
+	line-height: 40px;
+}
+/* color/white*/
+.btn-c {
+	color: $four-bw;
+	background-color: $two-color;
+	&:hover {
+		color: $two-color;;
+		background-color: $four-bw;
+	}
+}
+/* white/color */
+.btn-white {
+	color: $two-color;;
+	background-color: $four-bw;
+	&:hover {
+		color: $four-bw;
+		background-color: $two-color;
+	}
+}
+/* Gradient - color/white */
+.btn-grad {
+ 	color: $four-bw;
+   	background-color: $two-color;
+   	@include background-image(linear-gradient($two-color, $one-color));
+	&:hover {
+ 		color: $four-bw;
+   		background-color: $one-color;
+   		@include background-image(linear-gradient($one-color ,$two-color));
+	}
+}
+/* radius */
+
+.btn-radius {
+	@include border-radius(2px);
+}
+/* only border */
+.btn-border {
+	border: 1px solid $two-color;
+	&:hover {
+		color: $four-bw;
+		background-color: $two-color;
+	}
+}
+
+/* Wordpress link class - more content*/
+
+
+.btn-border-2 {
+    display:inline-block;
+    padding: 0 9%;
+    line-height: 230%;
+    margin: 0 10px;
+
+    &.c-btn {
+      border: 1px solid $two-color;
+      &:hover {
+        color: $four-bw;
+        border-color: $four-bw;
+        background-color: $two-color;
+
+      }
+    }
+    &.w-btn {
+      border: 1px solid $four-bw;
+      &:hover {
+        color: $two-color;
+        border-color: $two-color;
+        background-color: $four-bw;
+      }
+    }
+
+}
+.btn-download a {
+    border: 2px solid $border-color;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 90%;
+    background: $three-bw;
+    display: block;
+    margin: auto;    
+}
+

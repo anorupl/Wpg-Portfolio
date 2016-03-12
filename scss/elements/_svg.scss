@@ -1,0 +1,13 @@
+/* poprawia bład w ie odnośnie svg */
+svg:not(:root) {overflow: hidden;}
+
+.svg-element 		{display: none;}
+
+.svg {
+	.svg-element	{display: block;}
+}
+
+/* Wypenienie kolorem svg */
+.svg-color { fill: $two-color;	}
+.svg-white { fill: $four-bw;	}
+

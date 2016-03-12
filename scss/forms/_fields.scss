@@ -1,0 +1,487 @@
+/* Base Forms elements
+   ========================================================================== */
+
+/* Elements of Normalize.css v3.0.3
+ * ----------------- */
+
+
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  box-sizing: content-box; /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+	margin: 0;
+	font-weight: bold;
+	font: inherit;
+	color: inherit;
+}
+
+
+
+
+
+
+
+/* Base style form elements
+ * ----------------- */
+fieldset {
+	margin: 0 2px;
+	padding: 15px;
+	border: 1px solid $fields-border
+}
+
+legend {
+	font-weight: bold;
+	@include font-size-procent($size-big);
+	color: $fields-text;
+	border: 1px solid $fields-border;
+	padding: 19px 30px;
+}
+button,
+input[type=submit],
+input[type=button],
+input[type="reset"] {
+	display: inline-block;
+	padding: 7px 20px;
+	border: 1px solid $fields-active;
+	cursor: pointer;
+	white-space: normal;
+	background: $fields-color;
+	color: $fields-fff;
+
+	&:focus, &:active {
+	    color: $fields-fff;
+		background: $fields-active;
+	}
+}
+button[class^="icon-"] {
+    &:focus, &:active {
+        background: transparent;
+    }
+}
+
+
+input[type=file] {
+	background: $fields-bg;
+	color: $fields-text;
+	border: 1px solid $fields-border;
+
+}
+input[type=file]::-ms-value 							{border:0; background: none;}
+input[type=file]::-ms-browse							{border: 1px solid $fields-border; color: $fields-fff; background-color: $fields-color; padding: 5px 20px; }
+input[type=file]::-webkit-file-upload-button			{border: 1px solid $fields-border; color: $fields-fff; background-color: $fields-color; padding: 5px 20px;}
+input[type=file] > input[type=button]::-moz-focus-inner {border: 1px solid $fields-border; color: $fields-fff; background-color: $fields-color; padding: 5px 20px; }
+
+
+
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	max-width: 100%;
+	font-family: inherit;
+	@include font-size-procent($size-medium);
+	vertical-align: baseline;
+	outline: none;
+
+	:focus & {
+	    outline: $outline;
+	}
+
+}
+input, textarea {
+	border: 1px solid $border-color;
+    padding: 8px 10px 7px;
+	color: $fields-text;
+	background: $fields-bg;
+
+	&:focus {
+		border-color: $fields-active;
+	}
+}
+input[type=text] {
+	min-width: 50%;
+}
+textarea {
+	overflow: auto;
+	min-width: 70%;
+	min-height: 200px;
+}
+
+form {
+	margin: 20px 0;
+
+	p {
+		position:relative;
+		margin-bottom: 0.5em;
+	}
+
+
+	textarea,
+	input[type=text],
+	input[type=datetime],
+	input[type=number],
+	input[type=password],
+	input[type=url],
+	input[type=email],
+	input[type=file]	{
+
+		max-width:90%;
+		background-image: none;
+
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+
+   		@include single-transition( border-color, 0.3s,ease-in-out, 0.15s );
+
+	}
+
+	/* select with graphic */
+	select {
+	    position: relative;
+	    background: $fields-fff;
+	    max-width:100%;
+	    min-width:190px;
+	    border:1px solid $fields-border;
+	    padding:10px 40px 10px 10px;
+	    box-shadow:inset 0 1px 3px rgba(0,0,0,0.1);
+
+	    z-index: 2;
+	    cursor: pointer;
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    apperance:none;
+	    text-indent: 0.01px;
+	    text-overflow: "";
+	    background: url(#{$img-path}select-arrow.png) right center no-repeat;
+	    background-size: 40px 40px;
+	}
+	select::-ms-expand {
+	    display: none;
+	}
+	.ie9 select,
+	.lt-ie9 select {
+	    background-image: none;
+	    padding-right:10px;
+	}
+}
+
+/*----------------------------
+ * Search Form
+ *---------------------------- */
+.searchform {
+	width: 100%;
+	position: relative;
+	.field {
+		width: 100%;
+		padding-right: 30px;
+		min-width: 100px;
+		max-width: 100%;
+	}
+	button {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	 	padding: 0 5px;
+		height: 100%;
+	  	min-width: 20px;
+		border: 0;
+		background: transparent;
+	}
+	button i {
+		color: $fields-text;
+		@include font-size-procent(2.5);
+		line-height: 1;
+	}
+}
+/*----------------------------
+ * Wp post password form
+ *---------------------------- */
+.post-password-form {
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+/*----------------------------
+ * Change checkbox to Swip
+ *---------------------------- */
+
+input.onoffswitch-checkbox:empty
+{
+	position: absolute;
+	margin-left: -999px;
+}
+
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch {
+	display: inherit;
+	position: absolute;
+	height: 30px;
+	width: 90px;
+	overflow: hidden;
+	text-indent: 0;
+	border-radius: 2px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+input.onoffswitch-checkbox:empty ~ label.onoffswitch-label {
+	display: block;
+	position: relative;
+	height: 30px;
+	margin: 2px 5px 2px 0;
+	clear: both;
+	text-indent: 7em;
+	cursor: pointer;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 32px;
+	line-height: 3.2rem;
+}
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+   	@include single-transition( margin, 0.3s,ease-in, 0s );
+
+}
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-inner:before,
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    color: $fields-fff;
+    font-family: $font-base;
+    font-weight: bold;
+
+}
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-inner:before {
+    content: "TAK";
+    padding-left: 10px;
+    background-color: $fields-color;
+    color: $fields-fff;
+}
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-inner:after {
+    content: "NIE";
+    padding-right: 10px;
+    background-color: $fields-bg;
+    color: $fields-color;
+    text-align: right;
+}
+input.onoffswitch-checkbox:empty ~ label span.onoffswitch-switch {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    width: 18px;
+    margin: 6px;
+    background: $fields-fff;
+    border: 2px solid $fields-border;
+    border-radius: 20px;
+   	@include single-transition( all, 0.3s,ease-in, 0s );
+}
+input.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+input.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+
+/*----------------------------
+ * Radiobox & Checkbox
+ *---------------------------- */
+.checkbox-wpg span.checkbox-continer {
+	display: inline-block;
+	position: relative;
+	min-height:25px;
+	padding-top:5px;
+	padding-left:35px;
+	margin-right:15px;
+	cursor:pointer;
+}
+
+.checkbox-wpg input {
+	position:absolute;
+	top:0;
+	left:0;
+	width:25px;
+	height:25px;
+	z-index: 2;
+	cursor:pointer;
+	padding:0;
+	margin:0;
+	opacity: 0;
+}
+.checkbox-wpg input ~ span {
+	/* label */
+	font-weight:300;
+	font-size:0.9em;
+}
+.checkbox-wpg .state {
+	display: inline-block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:25px;
+	height:25px;
+	z-index: 1;
+
+	vertical-align: top;
+	border:1px solid $fields-border;
+	background: $fields-bg;
+	border-radius:2px;
+	box-shadow:inset 0 1px 3px rgba(0,0,0,0.1);
+}
+.checkbox-wpg input[type=radio] + .state {
+	border-radius:50%;
+}
+.checkbox-wpg .state:before {
+	width:7px;
+	top:13px;
+	left:6px;
+	@include rotate(45deg);
+}
+.checkbox-wpg .state:after {
+	width:10px;
+	top:12px;
+	left:9px;
+	@include rotate(-45deg);
+
+}
+.checkbox-wpg .state:before,
+.checkbox-wpg .state:after {
+	content:'';
+	display: block;
+	position: absolute;
+	height:3px;
+	background: #eee;
+	@include single-transition( background, 0.3s );
+
+}
+.checkbox-wpg input:checked + .state:before,
+.checkbox-wpg input:checked + .state:after {
+	background: $fields-color;
+}
+.checkbox-wpg input:disabled + .state {
+	background: $fields-bg;
+	box-shadow:none;
+	border:1px solid $fields-border;
+}
+.checkbox-wpg input:disabled ~ span {
+	cursor:not-allowed !important;
+}
