@@ -12,10 +12,10 @@
     */
     $(function () {
 
-      /* === Init Font Family And Style Control === */
-            fontChosen.init();
+      	/* === Init Font Family And Style Control === */
+        fontChosen.init();
         /* === Checkbox Multiple Control === */
-            multiCheckboxes.init();
+        multiCheckboxes.init();
         
         /* === Fn. Checkbox Multiple Sort Control === */
         $('.customize-control-checkbox-multiple-sort').multiCheckboxesSort();
@@ -35,7 +35,7 @@
         
     });
     
-    // JS - Typography section
+    /* === Font Family And Style Control === */
     fontChosen = {
 
         init: function () {
@@ -85,7 +85,8 @@
     };
     
     
-    // JS - All Checkbox Multiple Control
+    
+  	/* === All Checkbox Multiple Control === */
     var multiCheckboxes = {
 
         init: function(){
@@ -103,24 +104,27 @@
     };
  
  
-    /**
-    * Function multi Checkboxes Sort.
-    */
+  	/* === Function multi Checkboxes Sort === */
     $.fn.multiCheckboxesSort = function() {
         return this.each(function () {
 
             var $el = $(this),
                 $hidden_input = $el.find( 'input[type="hidden"]' );
           
-              if ($hidden_input.val().length !== 0) {
-    
-                 var $checkbox_sort_array = $hidden_input.val().split(",");
-              
-              } else {
-              
-                 var $checkbox_sort_array = [];
-              
-              }
+          		if ($hidden_input.length !== 0){
+		           
+					if ($hidden_input.val().length !== 0) {
+		    
+		                 var $checkbox_sort_array = $hidden_input.val().split(",");
+		              
+					} else {
+		              
+		                 var $checkbox_sort_array = [];
+		              
+					}       			
+				}
+          		
+  
 
             $el.find('input[type="checkbox"]' ).on( 'change', function() {
 
@@ -141,7 +145,7 @@
     
      
     
-    // Show terms with icon last post
+  	/* === Show terms with icon last post === */
     var last_in_terms = {
         
         init: function(){
@@ -209,7 +213,7 @@
     };
     
     
-    // Contact google map
+   	/* === Contact google map === */
     var display_map = {
 
         show_map: function(){
