@@ -30,15 +30,15 @@
 			<div class="title-area">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			</div>
-		<? else : ?>
+		<?php else : ?>
 			<div class="title-area">
 				<span class="site-title class-h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
 			</div>
-		<? endif;
+		<?php endif;
 
 			if ( has_nav_menu( 'header' ) ) { ?>
 				<button class="icon-button-small-menu right-button" aria-expanded="false" aria-controls="header-menu"><?php _e('Menu', 'wpg_theme'); ?></button>
-			<?
+			<?php
 				wp_nav_menu(array(
 						'container'       	=> false,
 						'theme_location' 	=> 'header',

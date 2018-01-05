@@ -46,7 +46,7 @@ class Fonts_Dropdown_Google extends WP_Customize_Control
 						<span class="description customize-control-description"><?php echo $this->description; ?></span>
 						<?php endif; ?>
 	                    <select <?php $this->link(); ?> name="<?php echo $this->id; ?>" id="<?php echo $this->id; ?>" class="google-font-select">
-				        <?
+				        <?php
 				        
 							foreach ($google_font_list as $key => $item) {
 	

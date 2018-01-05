@@ -60,7 +60,7 @@
 							
 						<a href="<?php echo esc_url(get_term_link(intval($gallery_offer),'gallery' )); ?>" class="see-gallery-button btn-border-2 w-btn"><?php _e('Gallery','wpg_theme'); ?></a>							
 							
-					<? endif; ?>					
+					<?php endif; ?>					
 				</div>
 			</div>
 		</div>
